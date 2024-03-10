@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AddUserDialog</class>
+ <widget class="QDialog" name="AddUserDialog">
+  <property name="windowModality">
+   <enum>Qt::ApplicationModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Add User</string>
+  </property>
+  <property name="modal">
+   <bool>true</bool>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_3">
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_6">
+       <item>
+        <widget class="QLabel" name="label_user_name">
+         <property name="text">
+          <string>Username</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineEdit_user_name"/>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_7">
+     <item>
+      <widget class="QLabel" name="label_first_name">
+       <property name="text">
+        <string>First Name</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="lineEdit_first_name"/>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_8">
+     <item>
+      <widget class="QLabel" name="label_last_name">
+       <property name="text">
+        <string>Last Name</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="lineEdit_last_name"/>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_9">
+     <item>
+      <widget class="QLabel" name="label_preferred_games">
+       <property name="text">
+        <string>Preferred games</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="checkBox_XO3">
+       <property name="toolTip">
+        <string>Tic-Tac-Toe</string>
+       </property>
+       <property name="text">
+        <string>XO3</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_6">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="checkBox_RPS">
+       <property name="toolTip">
+        <string>Rock-Paper-Scissors</string>
+       </property>
+       <property name="text">
+        <string>RPS</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_7">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="checkBox_Dice">
+       <property name="toolTip">
+        <string>Dice</string>
+       </property>
+       <property name="text">
+        <string>Dice</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_10">
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_cancel">
+       <property name="text">
+        <string>Cancel</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_ok">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string>OK</string>
+       </property>
+       <property name="default">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>lineEdit_user_name</tabstop>
+  <tabstop>lineEdit_first_name</tabstop>
+  <tabstop>lineEdit_last_name</tabstop>
+  <tabstop>checkBox_XO3</tabstop>
+  <tabstop>checkBox_RPS</tabstop>
+  <tabstop>checkBox_Dice</tabstop>
+  <tabstop>pushButton_cancel</tabstop>
+  <tabstop>pushButton_ok</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>lineEdit_user_name</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>AddUserDialog</receiver>
+   <slot>canGoAhead()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>136</x>
+     <y>35</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>60</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_first_name</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>AddUserDialog</receiver>
+   <slot>canGoAhead()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>209</x>
+     <y>99</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-5</x>
+     <y>118</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_last_name</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>AddUserDialog</receiver>
+   <slot>canGoAhead()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>247</x>
+     <y>155</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1</x>
+     <y>177</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_XO3</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>AddUserDialog</receiver>
+   <slot>canGoAhead()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>137</x>
+     <y>212</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-2</x>
+     <y>243</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_RPS</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>AddUserDialog</receiver>
+   <slot>canGoAhead()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>249</x>
+     <y>212</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>2</x>
+     <y>278</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_Dice</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>AddUserDialog</receiver>
+   <slot>canGoAhead()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>362</x>
+     <y>212</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>401</x>
+     <y>212</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_cancel</sender>
+   <signal>clicked()</signal>
+   <receiver>AddUserDialog</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>297</x>
+     <y>272</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>295</x>
+     <y>287</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_ok</sender>
+   <signal>clicked()</signal>
+   <receiver>AddUserDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>368</x>
+     <y>272</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>367</x>
+     <y>287</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>canGoAhead()</slot>
+ </slots>
+</ui>
