@@ -342,6 +342,7 @@ void MatchMakerEngine::slot_gameFinished(int exitCode, QProcess::ExitStatus exit
             // Handle game outcome based on output lines
             if (outputLines.size() == 1) // Winner
             {
+                const QString &winner = outputLines[0].trimmed();
                 listOfGamers[player1]->gameOver(!player1.compare(outputLines[0]));
                 listOfGamers[player2]->gameOver(!player2.compare(outputLines[0]));
             }
