@@ -343,25 +343,39 @@ void MatchMakerEngine::slot_gameFinished(int exitCode, QProcess::ExitStatus exit
             if (outputLines.size() == 1) // Winner
             {
                 const QString &winner = outputLines[0].trimmed();
-                listOfGamers[player1]->gameOver(!player1.compare(outputLines[0]));
-                listOfGamers[player2]->gameOver(!player2.compare(outputLines[0]));
+                safeGameOver(player1, !player1.compare(winner),
+                             player2, !player2.compare(winner));
             }
             else // Draw
             {
-                listOfGamers[player1]->gameOver(false);
-                listOfGamers[player2]->gameOver(false);
+                safeGameOver(player1, false, player2, false);
             }
         }
     }
 
     // something went wrong
     if (processHasError) {
-        listOfGamers[player1]->gameOver(false);
-        listOfGamers[player2]->gameOver(false);
+        safeGameOver(player1, false, player2, false);
     }
 
     if (process) {
         process->deleteLater();
+    }
+}
+
+void MatchMakerEngine::safeGameOver(const QString &player1, const bool &win1,
+                                    const QString &player2, const bool &win2)
+{
+    auto itEnd = listOfGamers.end();
+
+    auto it1 = listOfGamers.find(player1);
+    if (it1 != itEnd) {
+        it1.value()->gameOver(win1);
+    }
+
+    auto it2 = listOfGamers.find(player2);
+    if (it2 != itEnd) {
+        it2.value()->gameOver(win2);
     }
 }
 
@@ -437,4 +451,3 @@ QPair<std::shared_ptr<Gamer>, Gamer::GameType> MatchMakerEngine::matching(const 
     // No suitable opponent found
     return {};
 }
-

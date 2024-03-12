@@ -73,6 +73,11 @@ private:
     void startGame(const QString &gamer1, const QString &gamer2, const Gamer::GameType &gameType);
     // recursively process parent and child rows - csv export
     void processCSVRow(const QModelIndex &parentIndex, QTextStream &out);
+    // Safely update the state of gamers
+    // This case handles the scenario where a player is removed,
+    // and after that the finished signal is received from QProcess
+    void safeGameOver(const QString &player1, const bool &win1,
+                      const QString &player2, const bool &win2);
 
     // matching
     // try to find opponent and game
