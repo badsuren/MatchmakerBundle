@@ -1,7 +1,7 @@
-// You may need to build the project (run Qt uic code generator) to get "ui_AddUserDialog.h" resolved
+// You may need to build the project (run Qt uic code generator) to get "ui_adduserdialog.h" resolved
 
 #include "adduserdialog.h"
-#include "ui_AddUserDialog.h"
+#include "ui_adduserdialog.h"
 
 #include <QRegularExpression>
 #include <QRegularExpressionValidator>
